@@ -1,73 +1,152 @@
-# Welcome to your Lovable project
 
-## Project info
+---
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+#  AI-Powered Adaptive Learning Roadmap Generator
 
-## How can I edit this code?
+> **An intelligent learning assistant that interviews users, assesses skill levels, generates adaptive study roadmaps, and tracks progress using LLM + automation agents.**
 
-There are several ways of editing your application.
+---
+## 🧩 Problem Statement
 
-**Use Lovable**
+> Build an intelligent agent-based learning system that interviews users, assesses skill levels, generates personalized weekly roadmaps, dynamically adapts to feedback, and continuously tracks learning progress.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+---
 
-Changes made via Lovable will be committed automatically to this repo.
+## 📌 Overview
 
-**Use your preferred IDE**
+Traditional learning platforms provide **static content and generic learning paths**, which often fail to adapt to individual learner needs, pace, and goals.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+This project introduces an **AI-powered adaptive learning system** that:
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+* Understands the learner’s **goal, competency level, and time constraints**
+* Conducts an **AI-based diagnostic assessment**
+* Generates a **personalized, structured learning roadmap**
+* Continuously **tracks progress and adapts plans**
+* Automates **resource discovery and workflow orchestration** using intelligent agents
 
-Follow these steps:
+The system leverages **Large Language Models (LLMs)** and **workflow automation agents (n8n)** to create a **dynamic, student-centric learning experience**.
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+---
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## 🎯 Target Users
 
-# Step 3: Install the necessary dependencies.
-npm i
+* School Students
+* College Students
+* Competitive Exam Aspirants
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+---
 
-**Edit a file directly in GitHub**
+##  Key Features
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### ✅ Implemented Features
 
-**Use GitHub Codespaces**
+* **Smart Onboarding Form (React.js UI)**
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+  * Captures learning goal, current skill level, and time availability.
 
-## What technologies are used for this project?
+* **AI-Based Diagnostic Test Generation**
 
-This project is built with:
+  * Automatically generates **10 adaptive questions** (easy, medium, hard).
+  * Evaluates competency and identifies **knowledge gaps**.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+* **Automated Competency Evaluation**
 
-## How can I deploy this project?
+  * Calculates scores.
+  * Highlights strengths and improvement areas.
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+* **Personalized Structured Learning Roadmap**
 
-## Can I connect a custom domain to my Lovable project?
+  * Generates **weekly/day-wise learning plans**.
+  * Adapts difficulty based on user competency.
 
-Yes, you can!
+* **Progress Tracking using Automation Agent**
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+  * Stores **learning progress in Google Sheets**.
+  * Maintains long-term learning history.
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+---
+
+### Future Enhancements
+
+*  Automated **email reminders & deadline alerts**
+* **Dynamic roadmap adaptation** based on continuous feedback
+*  Visual analytics dashboard
+*  Concept-level weakness detection & revision planning
+
+---
+
+## 🏗️ System Architecture
+
+ **WorkFlow Diagram** 
+![arch diag](images/image.png)
+
+---
+
+## ⚙️ Tech Stack
+
+| Layer               | Technology             |
+| ------------------- | ---------------------- |
+| Frontend            | React.js               |
+| Backend             | Serverless APIs        |
+| AI Model            | Groq – OpenAI OSS 120B |
+| Agent Orchestration | n8n                    |
+| Database            | Google Sheets          |
+| Deployment          | Local                  |
+
+---
+
+## 🔁 Workflow Pipeline
+
+1. User submits learning preferences via React UI.
+2. Backend forwards request to **n8n automation workflow**.
+3. n8n sends structured prompts to **Groq LLM**.
+4. LLM:
+
+   * Generates diagnostic test
+   * Evaluates responses
+   * Builds structured learning roadmap
+5. n8n stores progress data into **Google Sheets**.
+6. Roadmap and evaluation are displayed on the user dashboard.
+
+
+---
+
+## 🌟 Innovation & Uniqueness
+
+* **Adaptive learning intelligence instead of static courses**
+* **Agent-based orchestration using n8n**
+* **Dynamic competency evaluation using LLM reasoning**
+* **Fully automated progress tracking**
+* **Scalable design for future adaptive coaching**
+
+---
+
+## 👥 Team Members
+
+| Name                  | Role                                  |
+| --------------------- | ------------------------------------- |
+| **Shivam Chopade**    | System Architecture & AI Integration  |
+| **Pratik Patil**      | Frontend Development                  |
+| **Kushagra Prajapat** | Automation & n8n Workflow Engineering |
+
+---
+
+## Example Use Case
+
+> A student preparing for **DSA interviews in 2 months** enters their goal and current level.
+> The system:
+>
+> * Generates a diagnostic test
+> * Identifies weak concepts
+> * Creates a structured weekly roadmap
+> * Tracks learning progress automatically
+> * (Future) Sends reminders & adapts learning plan
+
+---
+
+## 🏁 Conclusion
+
+This project demonstrates the **practical integration of AI + automation agents** to build a **truly adaptive learning platform**, addressing real-world challenges in personalized education.
+
+---
+
