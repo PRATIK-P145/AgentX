@@ -1,14 +1,44 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useAssessment } from "@/hooks/useAssessment";
+import UserInfoForm from "@/components/UserInfoForm";
+import QuizView from "@/components/QuizView";
+import ResultsView from "@/components/ResultsView";
+import RoadmapView from "@/components/RoadmapView";
+import { toast } from "sonner";
+import { useEffect } from "react";
 
 const Index = () => {
-  return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
-  );
+  const {
+    step,
+    userInfo,
+    questions,
+    evaluationResult,
+    roadmap,
+    loading,
+    error,
+    startAssessment,
+    submitAnswers,
+    generateRoadmap,
+    restart,
+  } = useAssessment();
+
+  useEffect(() => {
+    if (error) toast.error(error);
+  }, [error]);
+
+  switch (step) {
+    case "form":
+      return <UserInfoForm onSubmit={startAssessment} loading={loading} />;
+    case "quiz":
+      return <QuizView questions={questions} onSubmit={submitAnswers} loading={loading} topic={userInfo?.topic || ""} />;
+    case "results":
+      return evaluationResult ? (
+        <ResultsView data={evaluationResult} onGenerateRoadmap={generateRoadmap} loading={loading} />
+      ) : null;
+    case "roadmap":
+      return roadmap ? <RoadmapView roadmap={roadmap} onRestart={restart} /> : null;
+    default:
+      return null;
+  }
 };
 
 export default Index;
